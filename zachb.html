@@ -207,6 +207,11 @@
             padding: 0;
         }
 
+        #music {
+            animation: none;
+            position: fixed;
+            bottom: 35px;
+        }
     </style>
     <script>
         window.addEventListener('DOMContentLoaded', () => {
@@ -258,6 +263,7 @@
     </script>
 </head>
 <body>
+    <iframe src="250-milliseconds-of-silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
     <div class="pic-zone">
         <img src="./zach.png" alt="the legend">
         <div id="bubble1" class="dot"></div>
@@ -284,8 +290,10 @@
         <h1 class="rest">H<span>acker</span></h1>
         <div id="flag"></div>
     </div>
-
-
-
+    <div id="music">
+        <audio controls autoplay>
+            <source src="./10 Summer of Love (Original Unrel.mp3" type="audio/mpeg">
+        </audio>
+    </div>
 </body>
 </html>
