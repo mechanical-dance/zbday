@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda+One&display=swap" rel="stylesheet">
+    <link rel="icon" href="./zach.png">
+    <title>Happy Birthday!</title>
+    <style>
+        html {
+            background-color: teal;
+        }
+
+        h1 {
+            font-family: 'Merienda One', cursive;
+            font-size: 5.5vh;
+            color: #b03949;
+            margin-left: -100px;
+            margin-top: 1vh;
+            z-index: 1;
+            position: inherit;
+            animation-name: title;
+            animation-duration: 3s;
+            animation-fill-mode: forwards;
+        }
+
+        img {
+            float: left;
+            height: 75vh;
+            margin-left: 0;
+            padding: 0;
+        }
+
+        span {
+            font-size: .6em;
+            font-style: italic;
+            color: #982e3f;
+            animation-name: slide;
+            animation-duration: 4.5s;
+            animation-fill-mode: forwards;
+            animation-timing-function: ease-in;
+        }
+
+        @keyframes title {
+            0%{
+                opacity: 0;
+                top: -500px;
+                padding-top: 10vh;
+                transform: skewX(-90deg);
+            }
+
+            100% {
+                opacity: 100%;
+                top: 100px;
+                transform: skewX(0deg);
+            }
+        }
+
+
+        @keyframes slide {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                text-align: left;
+                opacity: 0;
+            }
+            100% {
+                text-align: center;
+                opacity: 100%;
+            }
+        }
+
+        @keyframes bubble {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 40%;
+            }
+        }
+
+        #Z {
+            padding-top: 25vh;
+        }
+
+        #flag {
+            size: inherit;
+            background-image: url("https://media.giphy.com/media/sFMDqop2ku4M0/giphy.gif");
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 60%;
+        }
+
+        .pic-zone{
+            position: relative;
+            display: inline-block;
+            float: left;
+        }
+
+        .pic-zone .l33t {
+            animation-name: matrix;
+            animation-duration: 24ms;
+            animation-iteration-count: infinite;
+            position: absolute;
+            z-index: 999;
+            margin: 0;
+            padding: 0;
+            left: 32.5%;
+            top: 29%;
+            font-size: 1vh;
+            text-align: center;
+            color: lime;
+        }
+
+        .pic-zone .y33t {
+            animation-name: matrix;
+            animation-duration: 25ms;
+            animation-iteration-count: infinite;
+            position: absolute;
+            z-index: 999;
+            margin: 0;
+            padding: 0;
+            left: 48%;
+            top: 29%;
+            font-size: 1vh;
+            text-align: center;
+            color: lime;
+        }
+
+        @keyframes matrix {
+            0%{
+                top: 28.5%;
+            }
+            100% {
+                top: 30%;
+            }
+        }
+
+        .dot {
+            animation: bubble;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            height: 1.3vh;
+            width: 1.3vh;
+            background-color: #bbb;
+            border-radius: 50%;
+            opacity: 30%;
+            display: inline-block;
+        }
+
+        #bubble1 {
+            animation-duration: 2.1s;
+            left: 70%;
+            top: 52%;
+            background-color: aquamarine;
+        }
+
+        #bubble2 {
+            animation-duration: 1.5s;
+            left: 76%;
+            top: 48%;
+            background-color: lime;
+        }
+
+        #bubble3 {
+            animation-duration: 1.85s;
+            left: 77%;
+            top: 56%;
+            background-color: aquamarine;
+        }
+
+        #little1 {
+            height: .5vh;
+            width: .5vh;
+            animation-duration: 1.1s;
+            left: 68%;
+            top: 45%;
+            background-color: aquamarine;
+        }
+
+        #little2 {
+            height: .5vh;
+            width: .5vh;
+            animation-duration: 0.7s;
+            left: 76%;
+            top: 51%;
+            background-color: lime;
+        }
+
+        #little3 {
+            height: .5vh;
+            width: .5vh;
+            animation-duration: 0.9s;
+            left: 80%;
+            top: 54%;
+            background-color: aquamarine;
+        }
+
+        p{
+            margin: 0;
+            padding: 0;
+        }
+
+    </style>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const left1 = document.querySelector('#row1');
+            const left2 = document.querySelector('#row2');
+            const left3 = document.querySelector('#row3');
+
+            const right1 = document.querySelector('#row1r');
+            const right2 = document.querySelector('#row2r');
+            const right3 = document.querySelector('#row3r');
+
+            let rando = Math.floor((Math.random()*10)+1);
+            let rando2 = Math.floor((Math.random()*10)+1);
+            let rando3 = Math.floor((Math.random()*10)+1);
+
+            setInterval(()=> {
+                left1.innerHTML = `${rando} ${-rando2} ${rando3} \n
+                               ${rando - 3} ${rando2 + 2}`;
+                rando = Math.floor((Math.random() * 10) + 1);
+                rando2 = Math.floor((Math.random() * 10) + 1);
+                rando3 = Math.floor((Math.random() * 10) + 1);
+
+                left2.innerHTML = `${rando} ${rando2} ${-rando3} \n
+                               ${rando - 3}`;
+                rando = Math.floor((Math.random() * 10) + 1);
+                rando2 = Math.floor((Math.random() * 10) + 1);
+                rando3 = Math.floor((Math.random() * 10) + 1);
+
+                left3.innerHTML = `${rando} ${rando2} ${rando3} \n
+                               ${rando - 3}`;
+                rando = Math.floor((Math.random() * 10) + 1);
+                rando2 = Math.floor((Math.random() * 10) + 1);
+                rando3 = Math.floor((Math.random() * 10) + 1);
+
+                right1.innerHTML = `${rando} ${-rando2} ${rando3}`;
+                rando = Math.floor((Math.random() * 10) + 1);
+                rando2 = Math.floor((Math.random() * 10) + 1);
+                rando3 = Math.floor((Math.random() * 10) + 1);
+
+                right2.innerHTML = `${-rando} ${rando2} ${rando3} \n
+                               ${rando - 3}`;
+                rando = Math.floor((Math.random() * 10) + 1);
+                rando2 = Math.floor((Math.random() * 10) + 1);
+                rando3 = Math.floor((Math.random() * 10) + 1);
+
+                right3.innerHTML = `${rando} ${rando2} ${rando3}`;
+            }, 40)
+        })
+    </script>
+</head>
+<body>
+    <div class="pic-zone">
+        <img src="./zach.png" alt="the legend">
+        <div id="bubble1" class="dot"></div>
+        <div id="bubble2" class="dot"></div>
+        <div id="bubble3" class="dot"></div>
+        <div id="little1" class="dot"></div>
+        <div id="little2" class="dot"></div>
+        <div id="little3" class="dot"></div>
+        <div class="l33t">
+            <p id="row1"></p>
+            <p id="row2"></p>
+            <p id="row3"></p>
+        </div>
+        <div class="y33t">
+            <p id="row1r"></p>
+            <p id="row2r"></p>
+            <p id="row3r"></p>
+        </div>
+    </div>
+    <div id="z-zone">
+        <h1 id="Z">Z<span>ach: </span></h1>
+        <h1 class="rest">A<span>merica's</span></h1>
+        <h1 class="rest">C<span>ocktail</span></h1>
+        <h1 class="rest">H<span>acker</span></h1>
+        <div id="flag"></div>
+    </div>
+
+
+
+</body>
+</html>
