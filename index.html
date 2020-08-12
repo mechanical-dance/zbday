@@ -13,16 +13,6 @@
             background-color: teal;
         }
 
-
-        /*Pic*/
-        img {
-            float: left;
-            height: 75vh;
-            margin-left: 0;
-            padding: 0;
-        }
-
-
         /*Text*/
         h1 {
             font-family: 'Merienda One', cursive;
@@ -87,9 +77,31 @@
         /*Image and Glasses*/
 
         .pic-zone {
+            animation-name: enter;
+            animation-fill-mode: forwards;
+            animation-duration: 2.2s;
+
             position: relative;
             display: inline-block;
             float: left;
+        }
+
+        img {
+            float: left;
+            height: 75vh;
+            margin-left: 0;
+            padding: 0;
+        }
+
+        @keyframes enter {
+            0% {
+                left: -500;
+                opacity: 0%;
+            }
+
+            100% {
+                opacity: 100%;
+            }
         }
 
         .pic-zone .l33t {
@@ -237,9 +249,9 @@
             }
 
             #music {
-                position: fixed;
-                bottom: 0px;
-                left: 15vw;
+                position: relative;
+                margin-top: 2vh;
+                padding-top: 3vh;
                 height: 4vh;
             }
         }
