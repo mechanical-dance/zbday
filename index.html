@@ -13,6 +13,17 @@
             background-color: teal;
         }
 
+
+        /*Pic*/
+        img {
+            float: left;
+            height: 75vh;
+            margin-left: 0;
+            padding: 0;
+        }
+
+
+        /*Text*/
         h1 {
             font-family: 'Merienda One', cursive;
             font-size: 5.5vh;
@@ -23,13 +34,6 @@
             animation-name: title;
             animation-duration: 3s;
             animation-fill-mode: forwards;
-        }
-
-        img {
-            float: left;
-            height: 75vh;
-            margin-left: 0;
-            padding: 0;
         }
 
         span {
@@ -43,7 +47,7 @@
         }
 
         @keyframes title {
-            0%{
+            0% {
                 opacity: 0;
                 top: -500px;
                 padding-top: 10vh;
@@ -56,7 +60,6 @@
                 transform: skewX(0deg);
             }
         }
-
 
         @keyframes slide {
             0% {
@@ -72,28 +75,18 @@
             }
         }
 
-        @keyframes bubble {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 40%;
-            }
-        }
-
         #Z {
             padding-top: 25vh;
         }
 
-        #flag {
-            size: inherit;
-            background-image: url("https://media.giphy.com/media/sFMDqop2ku4M0/giphy.gif");
-            background-position: center;
-            background-repeat: no-repeat;
-            opacity: 60%;
+        #z-zone {
+            display: block;
         }
 
-        .pic-zone{
+
+        /*Image and Glasses*/
+
+        .pic-zone {
             position: relative;
             display: inline-block;
             float: left;
@@ -129,8 +122,13 @@
             color: lime;
         }
 
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
         @keyframes matrix {
-            0%{
+            0% {
                 top: 28.5%;
             }
             100% {
@@ -138,6 +136,8 @@
             }
         }
 
+
+        /*Bubbles*/
         .dot {
             animation: bubble;
             animation-direction: alternate;
@@ -151,6 +151,15 @@
             border-radius: 50%;
             opacity: 30%;
             display: inline-block;
+        }
+
+        @keyframes bubble {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 40%;
+            }
         }
 
         #bubble1 {
@@ -201,22 +210,41 @@
             background-color: aquamarine;
         }
 
-        p{
-            margin: 0;
-            padding: 0;
-        }
-
-        #z-zone {
-            display: block;
-        }
-
+        /*Music and Media*/
         #music {
             animation: none;
             position: fixed;
             bottom: 20px;
-            right: 0px;
-            width: 25%;
         }
+
+        @media (max-width: 500px) {
+
+            h1 {
+                display: inline;
+                padding-right: 4vw;
+                padding-left: 1.1vw;
+            }
+
+            span {
+                font-size: .4em;
+            }
+
+            #Z {
+                right: 50vw;
+                text-align: center;
+                padding-left: 34vw;
+                padding-right: 80vw;
+            }
+
+            #music {
+                position: fixed;
+                bottom: 0px;
+                left: 15vw;
+                height: 4vh;
+            }
+        }
+
+
     </style>
     <script>
         window.addEventListener('DOMContentLoaded', () => {
@@ -228,11 +256,11 @@
             const right2 = document.querySelector('#row2r');
             const right3 = document.querySelector('#row3r');
 
-            let rando = Math.floor((Math.random()*10)+1);
-            let rando2 = Math.floor((Math.random()*10)+1);
-            let rando3 = Math.floor((Math.random()*10)+1);
+            let rando = Math.floor((Math.random() * 10) + 1);
+            let rando2 = Math.floor((Math.random() * 10) + 1);
+            let rando3 = Math.floor((Math.random() * 10) + 1);
 
-            setInterval(()=> {
+            setInterval(() => {
                 left1.innerHTML = `${rando} ${-rando2} ${rando3} \n
                                ${rando - 3} ${rando2 + 2}`;
                 rando = Math.floor((Math.random() * 10) + 1);
@@ -268,37 +296,37 @@
     </script>
 </head>
 <body>
-    <iframe src="250-milliseconds-of-silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
-    <div class="pic-zone">
-        <img src="./zach.png" alt="the legend">
-        <div id="bubble1" class="dot"></div>
-        <div id="bubble2" class="dot"></div>
-        <div id="bubble3" class="dot"></div>
-        <div id="little1" class="dot"></div>
-        <div id="little2" class="dot"></div>
-        <div id="little3" class="dot"></div>
-        <div class="l33t">
-            <p id="row1"></p>
-            <p id="row2"></p>
-            <p id="row3"></p>
-        </div>
-        <div class="y33t">
-            <p id="row1r"></p>
-            <p id="row2r"></p>
-            <p id="row3r"></p>
-        </div>
+<iframe src="250-milliseconds-of-silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
+<div class="pic-zone">
+    <img src="./zach.png" alt="the legend">
+    <div id="bubble1" class="dot"></div>
+    <div id="bubble2" class="dot"></div>
+    <div id="bubble3" class="dot"></div>
+    <div id="little1" class="dot"></div>
+    <div id="little2" class="dot"></div>
+    <div id="little3" class="dot"></div>
+    <div class="l33t">
+        <p id="row1"></p>
+        <p id="row2"></p>
+        <p id="row3"></p>
     </div>
-    <div id="z-zone">
-        <h1 id="Z">Z<span>ach: </span></h1>
-        <h1 class="rest">A<span>merica's</span></h1>
-        <h1 class="rest">C<span>ocktail</span></h1>
-        <h1 class="rest">H<span>acker</span></h1>
-        <div id="flag"></div>
+    <div class="y33t">
+        <p id="row1r"></p>
+        <p id="row2r"></p>
+        <p id="row3r"></p>
     </div>
-    <div id="music">
-        <audio controls autoplay>
-            <source src="./10 Summer of Love (Original Unrel.mp3" type="audio/mpeg">
-        </audio>
-    </div>
+</div>
+<div id="z-zone">
+    <h1 id="Z">Z<span>ach: </span></h1>
+    <h1 class="rest">A<span>merica's</span></h1>
+    <h1 class="rest">C<span>ocktail</span></h1>
+    <h1 class="rest">H<span>acker</span></h1>
+    <div id="flag"></div>
+</div>
+<div id="music">
+    <audio controls autoplay>
+        <source src="./10 Summer of Love (Original Unrel.mp3" type="audio/mpeg">
+    </audio>
+</div>
 </body>
 </html>
