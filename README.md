@@ -1,1 +1,1 @@
-## [Happy Birthday Zach 😘](https://jen615.github.io/zbday/)
+## [Happy Birthday Zach 😘](https://mechanical-dance.github.io/zbday/)
